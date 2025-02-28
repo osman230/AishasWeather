@@ -46,10 +46,10 @@
             android:layout_gravity="center_vertical" /> </LinearLayout>
 
     <TextView
-        android:id="@+id/underneath"
+        android:id="@+id/under"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/underneath"
+        android:text="@string/under"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"/>
 
