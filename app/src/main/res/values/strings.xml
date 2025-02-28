@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">AishasWeather</string>
-    <string name="city_name">Saint Paul</string>
-    <string name="temperature">72°F</string>
-    <string name="weather_details">Sunny</string>
-    <string name="sun">Sunny</string>
+    <string name="app">AishasWeather</string>
+    <string name="city">Saint Paul</string>
+    <string name="temp">72°F</string>
+    <string name="under">"Feels like 78°"</string>
+    <string name="details">"Low 65°\nHigh 80°\nHumidity 100%\nPressure 1023 hPa"</string>
 </resources>
