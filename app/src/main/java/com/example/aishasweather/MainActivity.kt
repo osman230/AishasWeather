@@ -1,47 +1,25 @@
-package com.example.aishasweather
-
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.aishasweather.ui.theme.AishasWeatherTheme
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.example.weatherapp.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private val viewModel: WeatherViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            AishasWeatherTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        viewModel.weatherData.observe(this, Observer { weather ->
+            binding.cityName.text = "City: ${weather.name}"
+            binding.temperature.text = "Temp: ${weather.main.temp}°C"
+            binding.description.text = "Condition: ${weather.weather[0].description}"
+        })
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AishasWeatherTheme {
-        Greeting("Android")
+        // Fetch data for a sample city
+        viewModel.fetchWeather(" Saint Paul")
     }
 }
