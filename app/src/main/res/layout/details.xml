@@ -49,7 +49,7 @@
         android:id="@+id/under"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/under"
+        android:text="@string/underneath"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"/>
 
