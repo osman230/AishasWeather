@@ -4,4 +4,8 @@
     <string name="temp">72°F</string>
     <string name="underneath">"Feels like 78°"</string>
     <string name="details">"Low 65°\nHigh 80°\nHumidity 100%\nPressure 1023 hPa"</string>
+    <string name="lat">44.34</string>
+    <string name="lon">10.99</string>
+    <string name="appid">8013d5ed66a421e7fc071de532e9e3ca</string>
+    <string name="uri">https://api.openweathermap.org/</string>
 </resources>
